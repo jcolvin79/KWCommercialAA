@@ -23,10 +23,10 @@
         </script>
     </head>
     <body>
-        <div id="wrapper">
-            <header>
+        <div id="wrapper" name="index">
+            <header class="header">
                 <div class="headerLogo">
-                    <a href="index.html">
+                    <a href="#index">
                         <img src="images/kwLogo.png" alt="KW Logo">
                         <h1>Commercial Ann Arbor</h1>
                     </a>
@@ -41,6 +41,7 @@
                 </nav>
                 <div class="headDiv"></div>
             </header>
+            <div class="bodyWrap">
             <ul class="bxslider">
                 <li><img src="images/AnnArbor0.jpg" alt="Image of Nickels Arcade"></li>
                 <li><img src="images/AnnArbor1.jpg" alt="Image of Main Street"></li>
@@ -152,6 +153,15 @@
                             <p>Fax / (734) 995-9401</p>
                             <p><a href="mailto:levlevin1@ameritech.net">levlevin1@ameritech.net</a></p>
                             <p><a href="http://levlevin.yourkwagent.com/" target="_blank">website</a></p>
+                        </li>
+                        <li>
+                            <img src="images/kerryJackson.jpg" alt="Image of Kerry Jackson"/>
+                            <h4>Kerry Jackson <span>Associate</span></h4>
+                            <p>Direct / (313) 658-3700</p>
+                            <p>Office / (734) 821-0774</p>
+                            <p>Fax / (734) 995-9401</p>
+                            <p><a href="mailto:Kerryjackson@prodigy.net">Kerryjackson@prodigy.net</a></p>
+                            <p><a href="http://KWCOMMERCIALMICHIGAN.com" target="_blank">website</a></p>
                         </li>
                     </ul>
                 </article>
@@ -276,6 +286,31 @@
             <footer>
                     <p>KW Commercial Ann Arbor &copy; 2014 <span>/ </span>Designed and Developed by <a href="http://www.upstandinglabs.com">Upstanding Labs</a></p>
             </footer>
+        </div>
         </div><!--end wrapper-->
+        <script type="text/javascript">
+            jQuery("document").ready(function($){
+    
+                var header = $('.header');
+    
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 0) {
+                        header.addClass("header-sticky");
+                    } else {
+                        header.removeClass("header-sticky");
+                    }
+                });
+ 
+            });
+
+
+            $('a').click(function(){
+                $('html, body').animate({
+                    scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
+                }, 500);
+                return false;
+            });
+
+        </script>
     </body>
 </html>
